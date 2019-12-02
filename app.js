@@ -18,7 +18,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
     if (gamePlay) {
         score[aPlayer] += rScore;
         document.getElementById('score-' + aPlayer).textContent=score[aPlayer];
-        if (score[aPlayer] >= 20) {
+        if (score[aPlayer] >= 100) {
             document.getElementById('name-' + aPlayer).textContent = "Winner!"
             document.querySelector('.player-'+ aPlayer +'-panel').classList.add('winner');
             document.querySelector('.player-'+ aPlayer +'-panel').classList.remove('active');
