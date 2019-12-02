@@ -1,7 +1,10 @@
-var score, rScore, aPlayer, gamePlay;
+var score, rScore, aPlayer, gamePlay, wScore;
 init();
+function winningScore()(){
+    wScore=document.querySelector('.final-score').value;
+}   
 document.querySelector('.btn-roll').addEventListener('click', function () {
-    if (gamePlay) {
+    if (gamePlay && wScore >= 0) {
         var dice = Math.floor(Math.random() * 6 + 1);
         var diceImg = document.querySelector('.dice');
         diceImg.style.display = 'block';
@@ -18,7 +21,8 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
     if (gamePlay) {
         score[aPlayer] += rScore;
         document.getElementById('score-' + aPlayer).textContent=score[aPlayer];
-        if (score[aPlayer] >= 100) {
+        console
+        if (score[aPlayer] >= wScore) {
             document.getElementById('name-' + aPlayer).textContent = "Winner!"
             document.querySelector('.player-'+ aPlayer +'-panel').classList.add('winner');
             document.querySelector('.player-'+ aPlayer +'-panel').classList.remove('active');
@@ -42,6 +46,7 @@ function init(){
     score=[0,0];
     rScore=0;
     aPlayer=0;
+    document.querySelector('.final-score').value = '';
     document.getElementById("score-0").textContent='0';
     document.getElementById("score-1").textContent='0';
     document.getElementById("current-0").textContent='0';
