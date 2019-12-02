@@ -1,6 +1,6 @@
 var score, rScore, aPlayer, gamePlay, wScore;
 init();
-function winningScore()(){
+function winningScore(){
     wScore=document.querySelector('.final-score').value;
 }   
 document.querySelector('.btn-roll').addEventListener('click', function () {
